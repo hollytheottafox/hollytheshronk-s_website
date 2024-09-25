@@ -1,0 +1,208 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('bg.svg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    background-color: #f0f0f02d;
+    color: white;
+    padding: 10px 10px;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float:right;
+    display:inline;
+}
+nav ul li{
+    display: inline;
+    margin: 0 10px;
+}
+.hero{
+    /* two collumn layout on desktop, on mobile first collum above second collumn */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    height: calc(calc(100vh - 40px) - 1em - 25px);
+} 
+.hero.real img{
+    height: calc(calc(70vh - 30px) - 1em - 60px);
+    border-radius: 10px;
+    max-width: 60vw;
+    object-fit:contain;
+}
+.hero.real div:has(img){
+    text-align: center;
+}
+.hero div{
+    background-color: #f0f0f02d;
+    padding: 20px;
+    border-radius: 10px;
+}
+.hero>div.picture{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.hero.real>div.text{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display:flex;
+    flex-direction: column;
+}
+.hero.real div.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero div:last-of-type h1{
+    margin: 0;
+}
+/* responsiveness */
+@media screen and (max-width: 1000px){
+    .hero{
+        grid-template-columns: 1fr;
+        height: calc(calc(100vh - 40px) - 1em - 50px);
+    }
+    .hero.real img{
+        height: auto;
+        width: 80vw;
+    }
+    .hero > div{
+        border-radius: 10px;
+    }
+    .hero>div.picture{
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 10px;
+    }
+    .hero>div.text{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px !important;
+    }
+    .hero.real>div.text{
+        display: flex;
+        align-items: start !important;
+    }
+    nav ul{
+        display: block;
+        text-align: center;
+        float:none;
+    }
+    nav b{
+        display: block;
+        text-align: center;
+    }
+    .hero > div:has(img){
+        display: flex;
+        align-items: end;
+    }
+    .card-onehalf{
+        width: calc(100% - 40px) !important;
+        margin: 5px;
+        height: fit-content !important;
+    }
+}
+.socrow{
+    display: inline-block;
+    background: none !important;
+    display:flex;
+    gap: 10px;
+    width: calc(100% - 0px);
+    text-align: center;
+    padding:0px !important;
+    justify-content: center;
+}
+.socrow a{
+    color:#f0f0f0;
+    font-size: 1.5em;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+.socrow div{
+    padding: 10px;
+}
+.allround{
+    border-radius:10px !important;
+}
+.name{
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+    grid-area: text;
+    font-weight: bold;
+}
+.quote{
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: normal;
+    font-size: medium;
+}
+.friendquote{
+    margin-bottom:10px;
+    width: calc(100% - 40px);
+    text-align: left;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-areas: image text;
+}
+.quote.csshatesthisone{
+    display: block;
+}
+.person{
+    width:5em !important;
+    height: 5em !important;
+    /* position:relative; */
+    /* left:-100px; */
+    grid-area: image;
+    object-fit: cover !important;
+}
+.hero:not(.real){
+    display: block;
+}
+.quote a, .name a{
+    text-decoration: underline;
+}
+big{
+    font-size: 1.2em;
+    display: block;
+}
+.card-onehalf{
+    width: calc(50vw - 93px);
+    display: inline-block;
+    margin: 5px;
+    height: 150px;
+    vertical-align: top;
+}
+.card-onethird:first-of-type{
+    margin-left: 0px;
+}
+.card-onethird:last-of-type{
+    margin-right: 0px;
+}
+:has(.friendquote){
+    flex-direction: column;
+    align-items: start !important;
+}
+:has(.friendquote) h1{
+    text-align: left;
+    float:left;
+}
+.hero.contact > .text{
+    display: block !important;
+}
+
+.friendquote:first-of-type{
+    margin-top: calc(2.2em + 20px);
+}
